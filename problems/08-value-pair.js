@@ -11,7 +11,18 @@ valuePair(object1, object2, 'name'); // => [ 'One', 'Two' ]
 ***********************************************************************/
 
 function valuePair(obj1, obj2, key) {
-  // Your code here
+  let values = []
+  // let obj3 = {obj2, obj1};
+  // let obj = {...obj3}
+  // console.log(obj);
+  if (key){
+    values.push(obj1[key])
+    values.push(obj2[key])
+  }
+  // for (let key in obj3){
+  //   if (key) values.push(obj3[key])
+  // }
+  return values
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
