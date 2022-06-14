@@ -11,7 +11,9 @@ getFullName(p2); // => 'Charlie Brown'
 ***********************************************************************/
 
 function getFullName(person) {
-  // Your code here
+  return person.firstName + " " + person.lastName // can't do person.firstName, person.lastName when you return;
+  // only console logging; return only wants to return a single data value
+
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
