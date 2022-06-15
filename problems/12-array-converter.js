@@ -11,12 +11,22 @@ console.log(arrayConverter(["mango", "pineapple"])); // => {mango: 1, pineapple:
 console.log(arrayConverter(["apple", "banana", "potato", "banana"])); // => {apple: 1, banana: 2, potato: 1}
 ***********************************************************************/
 
+// function arrayConverter(array) {
+//   let obj = {}
+//   for (let i = 0 ; i < array.length; i++){
+//     let ele = array[i]
+//     if (obj[ele] === undefined) obj[ele] = 1
+//     else obj[ele] ++
+//   }
+//   return obj
+// }
 function arrayConverter(array) {
   let obj = {}
-  for (let i = 0 ; i < array.length; i++){
-    let ele = array[i]
-    if (obj[ele] === undefined) obj[ele] = 1
-    else obj[ele] ++
+  for (let ele in array){
+    if (!(ele in obj)) {
+      obj[ele] = 1
+    } else obj[ele]++
+    // obj[ele] ? obj[ele]++ : obj[ele] = 1
   }
   return obj
 }
