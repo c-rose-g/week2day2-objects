@@ -28,21 +28,30 @@ console.log(countScores(peeps)); //=> { Anthony: 4, Fred: 4, Winnie: 6 }
 ***********************************************************************/
 // iterate thru people array, and loop thru each obj inside people,
 //create new obj with name and score of each player
-function countScores(people) {
+// function countScores(people) {
+//   let scores = {}
+//   for (let i = 0 ; i < people.length; i++){
+//     let person = people[i]
+//     if (key in person){
+//       if (scores.name === undefined){
+//         scores.name = 1
+//       } else {
+//         scores.name ++
+//       }
+//     }
+//   }
+//   return scores
+// }
+//bill's oneliner (don't do this though lol)
+//let countScores = (people) => people.reduce((accum, person) => Object.assign(accum, accum[person.name] ? {[person.name]: (accum[person.name] + person.score)} : {[person.name] : person.score}), {} )
+
+function countScores(people){
   let scores = {}
-  for (let i = 0 ; i < people.length; i++){
-    let person = people[i]
-    if (key in person){
-      if (scores.name === undefined){
-        scores.name = 1
-      } else {
-        scores.name ++
-      }
-    }
+  for (const obj of people){
+    if (Object.hasOwn(scores, obj.name)) scores[obj.name] += obj.score
+    else scores[obj.name] = obj.score
   }
   return scores
 }
-//bill's oneliner (don't do this though lol)
-//let countScores = (people) => people.reduce((accum, person) => Object.assign(accum, accum[person.name] ? {[person.name]: (accum[person.name] + person.score)} : {[person.name] : person.score}), {} )
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = countScores;

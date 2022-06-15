@@ -15,22 +15,22 @@ breakDownObj(object2); // => [ 'location', 'borough', 'NY', 'Brooklyn' ]
 ***********************************************************************/
 //POLYA
 // iterate thru obj, and push each key and value separately, using spread operator
-function breakDownObj(obj) {
-  let keys = Object.keys(obj)
-  let values = Object.values(obj)
-  return [...keys, ...values1]
-
-}
 // function breakDownObj(obj) {
-//   let keys = []
-//   let values = []
-//   for (let key in obj){
-//     if (key) keys.push(key)
-//     if (obj[key]) values.push(obj[key])
-//   }
-//   let keyValues = [...keys, ...values]
-//   return keyValues
+//   let keys = Object.keys(obj)
+//   let values = Object.values(obj)
+//   return [...keys, ...values1]
+
 // }
+function breakDownObj(obj) {
+  let keys = []
+  let values = []
+  for (let key in obj){
+    if (key) keys.push(key)
+    if (obj[key]) values.push(obj[key])
+  }
+  let keyValues = [...keys, ...values]
+  return keyValues
+}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = breakDownObj;
